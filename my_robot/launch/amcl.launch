@@ -1,7 +1,9 @@
 <launch>
 
     <arg name="map_file" default="$(find my_robot)/maps/map.yaml"/>
-    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" >
+        <param name="frame_id" value="map"/>
+    </node>
     
     <node name="amcl" pkg="amcl" type="amcl" output="screen">
         <remap from="scan" to="my_robot/laser/scan"/>
