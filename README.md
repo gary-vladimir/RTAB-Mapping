@@ -115,7 +115,6 @@ Here’s how the robot performs in the simulation environment:
 
 ![Map and Lidar Alignment](images/04.png)
 
-![Map and Lidar Alignment](images/05.png)
 ---
 
 ## License
