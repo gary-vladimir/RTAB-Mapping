@@ -158,8 +158,48 @@
     <child link="camera"/>
     <axis xyz="0 1 0"/>
   </joint>
+  
+  <link name="camera_link">
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0.0 0 0" rpy="0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </visual>
+  </link>
 
+  <!-- Camera Link Joint -->
+  <joint name="camera_link_joint" type="fixed">
+    <origin xyz="0.17 0 0.05" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="camera_link"/>
+  </joint>
 
+  <!-- Camera Optical Link and Joint -->
+  <joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
+    <parent link="camera_link"/>
+    <child link="camera_link_optical"/>
+  </joint>
+
+  <link name="camera_link_optical">
+  </link>
+  
   <!-- Hokuyo Lidar Link -->
   <link name="hokuyo">
     <inertial>
@@ -194,16 +234,6 @@
     <child link="hokuyo"/>
     <axis xyz="0 1 0"/>
   </joint>
-  
-  <!-- Added Camera Optical Link and Joint -->
-  <joint name="camera_optical_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
-    <parent link="camera_link"/>
-    <child link="camera_link_optical"/>
-  </joint>
-
-  <link name="camera_link_optical">
-  </link>
 
 </robot>
 
