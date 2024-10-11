@@ -11,13 +11,15 @@
   <!-- Localization Node -->
   <group ns="rtabmap">
     <node name="rtabmap" pkg="rtabmap_slam" type="rtabmap" output="screen">
-
       <!-- Basic RTAB-Map Parameters -->
       <param name="database_path" type="string" value="$(arg database_path)"/>
       <param name="frame_id" type="string" value="robot_footprint"/>
       <param name="odom_frame_id" type="string" value="odom"/>
       <param name="subscribe_depth" type="bool" value="true"/>
       <param name="subscribe_scan" type="bool" value="true"/>
+
+      <!-- Set Initial Pose -->
+      <param name="initial_pose" type="string" value="0 0 0 0 0 0"/>
 
       <!-- RTAB-Map Inputs -->
       <remap from="scan" to="/my_robot/laser/scan"/>
@@ -32,6 +34,7 @@
       <param name="Rtabmap/DetectionRate" type="string" value="1"/>
       <param name="Reg/Force3DoF" type="string" value="true"/>
       <param name="Mem/IncrementalMemory" type="string" value="false"/>
+      <param name="publish_tf_map_odom" type="bool" value="true"/>
 
       <!-- Loop Closure Detection Parameters -->
       <param name="Kp/DetectorStrategy" type="string" value="0"/>
@@ -39,7 +42,6 @@
       <param name="SURF/HessianThreshold" type="string" value="100"/>
       <param name="Reg/Strategy" type="string" value="0"/>
       <param name="Vis/MinInliers" type="string" value="15"/>
-
     </node>
   </group>
 
