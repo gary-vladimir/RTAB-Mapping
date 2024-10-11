@@ -28,22 +28,17 @@
       <!-- RTAB-Map Output -->
       <remap from="grid_map" to="/map"/>
 
-      <!-- Rate (Hz) at which new nodes are added to map -->
+      <!-- Localization Parameters -->
       <param name="Rtabmap/DetectionRate" type="string" value="1"/>
-
-      <!-- 2D Localization -->
       <param name="Reg/Force3DoF" type="string" value="true"/>
+      <param name="Mem/IncrementalMemory" type="string" value="false"/>
 
       <!-- Loop Closure Detection Parameters -->
-      <!-- 0=SURF, 1=SIFT, 2=ORB, etc. -->
       <param name="Kp/DetectorStrategy" type="string" value="0"/>
       <param name="Kp/MaxFeatures" type="string" value="400"/>
       <param name="SURF/HessianThreshold" type="string" value="100"/>
       <param name="Reg/Strategy" type="string" value="0"/>
       <param name="Vis/MinInliers" type="string" value="15"/>
-
-      <!-- Localization Mode -->
-      <param name="Mem/IncrementalMemory" type="string" value="false"/>
 
     </node>
   </group>
