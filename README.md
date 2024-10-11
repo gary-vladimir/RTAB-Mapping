@@ -37,8 +37,7 @@ To get started with this project, follow the steps below:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/gary-vladimir/Where-Am-I-AMCL.git
-cd Where-Am-I-AMCL
+git clone https://github.com/gary-vladimir/RTAB-Mapping.git
 ```
 
 ### Install Dependencies
