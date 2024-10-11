@@ -3,7 +3,7 @@
 
 ## Overview
 
-This project implements a two-wheel robot in a simulated environment using **Gazebo**, **ROS**, and **RViz**. The goal of the project is to enable localization and navigation for the robot within a known map using the **AMCL** (Adaptive Monte Carlo Localization) node. The robot is equipped with a **LIDAR** sensor for environment scanning and a **camera** for visual perception. The robot can move within a predefined map and localize itself accurately using AMCL, while relying on a precise odometry model and laser scan data.
+This project implements a two-wheel differential drive robot in a simulated environment using Gazebo, ROS Noetic, and RViz. The robot is equipped with an RGB-D camera and a LIDAR sensor to perform 2D SLAM (Simultaneous Localization and Mapping) using RTAB-Map. The goal is to enable the robot to navigate within a simulated environment and build a map in real-time.
 
 ---
 
@@ -15,6 +15,9 @@ This project implements a two-wheel robot in a simulated environment using **Gaz
 - **Accurate Odometry**: The robot has a near-perfect odometry model, allowing for precise movement.
 - **Map Alignment**: The robot's position stays aligned with the map in RViz, even after complex movements.
 - **Navigation**: The robot uses `move_base` for planning and following paths on the map.
+- **RGB-D Camera and LIDAR Sensor**: For depth perception and environment scanning.
+- **RTAB-Map SLAM**: Real-time appearance-based mapping and localization.
+- **Database Sharing**: The mapping database (rtabmap.db) is available for download.
 
 ---
 
@@ -29,6 +32,7 @@ To get started with this project, follow the steps below:
 - **RViz**
 - **teleop_twist_keyboard** for manual robot control
 - **git**
+- **RTAB-Map and rtabmap_ros packages**
 
 ### Clone the Repository
 
